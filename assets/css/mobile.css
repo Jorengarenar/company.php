@@ -1,0 +1,142 @@
+@media only screen and (max-width: 900px) {
+
+  body {
+    font-size: 1.3em;
+  }
+
+  nav {
+    --height: 2em;
+    padding: 0;
+    width: 100%;
+  }
+
+  nav #language svg {
+    width: 2em;
+  }
+
+  nav .links {
+    display: none;
+  }
+
+  nav .links a {
+    border-bottom: none;
+    display: block;
+    text-align: right;
+    margin-right: 1em;
+  }
+
+  nav label[for="menu"] {
+    display: initial !important;
+    margin-bottom: -0.1em;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
+    margin-left: auto;
+    margin-right: 0.5em;
+    position: relative;
+    right: 0;
+    font-size: 1.5em;
+  }
+
+  nav #menu:checked ~ div .links {
+    display: grid;
+    width: 100%;
+
+    position: absolute;
+    top: var(--height);
+    left: 0;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+  }
+
+  nav #menu:checked ~ label {
+    margin-bottom: -0.2em;
+  }
+
+  nav + div {
+    height: 2em;
+  }
+
+
+  .slider::before, .slider::after {
+    width: 30px;
+  }
+
+
+  footer iframe {
+    display: none;
+  }
+
+  footer {
+    display: block;
+    height: 4em;
+    text-align: center;
+  }
+
+  footer > div > div {
+    margin-top: 0.5em;
+    float: initial !important;
+  }
+
+  footer > div > div > a {
+    display: block;
+    margin-right: initial;
+  }
+
+
+  #about {
+    display: block !important;
+    text-align: center !important;
+  }
+
+  #about img {
+    display: none;
+  }
+
+  #contact .abc {
+    display: block !important;
+    text-align: center;
+  }
+
+  #contact iframe {
+    display: none;
+  }
+
+
+  #products {
+    margin-top: 1.5em !important;
+  }
+
+  #product-list {
+    overflow-x: scroll;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  #product-list > div {
+    padding: 10px;
+  }
+
+  #product-list > div img {
+    height: 5em;
+  }
+
+  #products article {
+    display: block;
+    height: initial;
+    font-size: 0.85em;
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  #products article div:not(.img) {
+    margin: 2em 1em;
+    text-align: justify;
+  }
+
+  #products article div.img {
+    width: 100%;
+    max-width: initial;
+  }
+
+}
+
+/* vim: set fen fdl=1: */

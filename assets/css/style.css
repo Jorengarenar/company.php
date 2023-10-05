@@ -1,0 +1,126 @@
+@import "colors.css";
+@import "nav.css";
+@import "slider.css";
+@import "products.css";
+
+@import "mobile.css";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: Raleway, sans-serif, Arial;
+  font-weight: lighter;
+  font-size: 1.1em;
+  margin: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+address {
+  white-space: nowrap;
+}
+
+summary {
+  cursor: pointer;
+  outline: none;
+  width: max-content;
+}
+
+svg.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentcolor;
+  display: inline-block;
+}
+
+
+main {
+  display: block;
+
+  width: 90%;
+  max-width: 1600px;
+
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+main > div:not(:last-child) {
+  border-bottom: 1px solid var(--primary);
+}
+
+
+#about {
+  text-align: justify;
+  display: flex;
+}
+
+#about div {
+  margin: 2em;
+}
+
+#about img {
+  max-width: 35%;
+  height: 100%;
+  margin: auto;
+}
+
+
+#contact {
+  display: flex;
+  margin-top: 1em;
+  font-family: Lato, sans-serif, Arial;
+}
+
+#contact iframe {
+  max-width: 100%;
+}
+
+#contact .abc {
+  display: flex;
+  justify-content: space-around;
+  width: 1000px;
+  margin-top: 90px;
+}
+
+#contact .abc svg {
+  width: 5em;
+}
+
+#contact .abc > :is(a,div) > * {
+  display: block;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+
+footer {
+  background-color: #333;
+  color: white;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 20px;
+  border-top: 5px solid #222;
+}
+
+footer > div {
+  max-width: 1700px;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+footer > div > div {
+  float: right;
+}
+
+footer > div > div > * {
+  margin-right: 2em;
+}
+
+footer #copyright {
+  margin-left: 1em;
+}

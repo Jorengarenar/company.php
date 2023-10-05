@@ -1,0 +1,58 @@
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-10em);
+  }
+
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+
+  100% {
+    opacity: 0;
+    transform: translateX(calc(-10em * 5));
+  }
+}
+
+.slider {
+  --height: 300px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.slider > div {
+  animation: slide 20s linear infinite;
+  height: var(--height);
+  display: inline-flex;
+  position: relative;
+  z-index: -2;
+  width: calc(100% - 180px);
+}
+
+.slider::before, .slider::after {
+  content: " ";
+  width: 80px;
+  height: var(--height);
+  display: inline-block;
+  background: linear-gradient(to var(--way), #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.slider::before {
+  --way: right;
+}
+
+.slider::after {
+  --way: left;
+  float: right;
+}
+
+#quote {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 70px;
+  color: white;
+  z-index: -1;
+  font-size: 2em;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}

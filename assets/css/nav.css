@@ -1,0 +1,185 @@
+nav {
+  --height:      3.5em;
+  --corner-size: 20px;
+
+  background-color: var(--primary);
+  font-size: 1.2em;
+
+  position: fixed;
+  top: 0;
+
+  height: var(--height);
+  width: calc(100% - 100px);
+  max-width: 1700px;
+
+  padding: 0 50px;
+
+  /* centering */
+  margin: auto;
+  left:  0;
+  right: 0;
+
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+
+  z-index: 100;
+}
+
+@media only screen and (min-width: 1700px) {
+  nav:before, nav:after {
+    --offset: calc(-1 * var(--corner-size)/2);
+    content: "";
+    position: absolute;
+    bottom: var(--offset);
+    width: var(--corner-size);
+    height: var(--corner-size);
+    background: var(--bg);
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+
+  nav:before {
+    right: var(--offset);
+  }
+
+  nav:after {
+    left: var(--offset);
+  }
+}
+
+nav + div {
+  height: 4em;
+  width: 100%;
+}
+
+
+nav > div {
+  display: inline-flex;
+  margin-right: 1em;
+  width: inherit;
+  height: 1.2em;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+nav a {
+  text-transform: uppercase;
+  padding: 0.3em;
+  margin: 0 0.1em;
+}
+
+nav .links a {
+  border-bottom: 1px solid;
+}
+
+nav a:hover {
+  opacity: 0.8;
+  border-bottom: initial;
+}
+
+nav #logo {
+  height: 75%;
+}
+
+nav #logo img {
+  height: 100%;
+  width: auto;
+}
+
+
+@media only screen and (min-width: 900px) {
+
+  @keyframes scrolledDown {
+    to {
+      height: 2em;
+      background-color: rgba(88, 88, 88, 0.9);
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @keyframes scrolledTop {
+    from {
+      height: 2em;
+      width: 100%;
+      padding: 0;
+      max-width: 100%;
+    }
+    to {
+      height: var(--height);
+    }
+  }
+
+  html[data-scroll="false"] nav {
+    animation: scrolledTop 1s forwards;
+  }
+
+  html[data-scroll="true"] nav {
+    animation: scrolledDown 0.5s forwards;
+    --corner-size: 0;
+  }
+
+
+  html[data-scroll="true"] nav .links a {
+    border-bottom: 0px;
+  }
+
+  html[data-scroll="true"] nav .icon {
+    height: 0.8em;
+  }
+
+}
+
+
+nav #language {
+  height: inherit;
+  text-align: right;
+  font-weight: normal;
+  margin-left: 2em;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+nav #language:not([open]) {
+  margin-bottom: 0.3em;
+}
+
+nav #language a {
+  margin-left: -6ch;
+
+  text-transform: initial;
+  font-size: 0.8em;
+  min-width: min-content;
+  padding: 0.2em;
+  text-align: center;
+  background-color: white;
+  color: #555;
+  border: 1px solid #555;
+}
+
+nav #language a:hover {
+  background-color: #CCC;
+}
+
+nav #language svg {
+  width: 1.5em;
+  vertical-align: middle;
+}
+
+nav #language summary {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, .7));
+  width: initial;
+  list-style: none;
+}
+
+nav #language summary::-webkit-details-marker {
+  display: none;
+}
+
+
+nav #menu, nav label[for="menu"] {
+  display: none;
+}
